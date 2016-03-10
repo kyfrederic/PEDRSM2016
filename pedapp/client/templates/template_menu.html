@@ -1,0 +1,44 @@
+ <template name="menu">
+ <title> Bibliothéques </title>
+     <link href="http://fonts.googleapis.com/css?family=Creepster" rel ="stylesheet"/>
+     <link href="/css/main.css" rel ="stylesheet"/> 
+      
+<ul id="menu-demo2">
+	<li><a href="/">Chaine de caractère</a>
+		<ul>
+			<li><a href="{{pathFor route='concatene'}}">Concaténation</a></li>
+			<li><a href="{{pathFor route='longueur'}}">Longueur</a></li>
+			<li><a href="{{pathFor route='majuscule'}}">Majuscule</a></li>
+			<li><a href="{{pathFor route='minuscule'}}">Minuscule</a></li>
+		</ul>
+	</li>
+	<li><a href="/">Mathémathique</a>
+		<ul>
+			<li><a href="{{pathFor route='racine'}}">Racine carré</a></li>
+			<li><a href="{{pathFor route='puissance'}}">Puissance</a></li>
+			<li><a href="{{pathFor route='factorielle'}}">Factorielle</a></li>
+			
+		</ul>
+	</li>
+	<li><a href="/">Gestion de fichiers</a>
+		<ul>
+			<li><a href="{{pathFor route='fichierEJS'}}">Créer un fichier EJS</a></li>
+            <li><a href="{{pathFor route='fichierJS'}}">Créer un fichier JavaScript</a></li>
+            <li><a href="{{pathFor route='fichierCSS'}}">Créer un fichier CSS</a></li>
+			<!-- <li><a href="{{pathFor route='listes'}}">Ouvrir un fichier EJS</a></li> -->
+			<!-- <li><a href="javascript:MaFonction()">Ouvrir un fichier EJS</a></li> -->
+			<li><a href="{{pathFor route='ouvrirFichier'}}">Ouvrir un fichier EJS</a></li>
+            <li><a href='javascript:MaFonction()'>Ouvrir un fichier JS</a></li>
+            <li><a href="{{pathFor route='listeCSS'}}">Ouvrir un fichier CSS</a></li>
+			
+		</ul>
+	</li>
+	<li><a href="/">mongoDB</a>
+		<ul>
+			<li><a href="{{pathFor route='create_personne'}}">Ajouter un utilisateur</a></li>
+			<li><a href="{{pathFor route='personnes'}}">Liste d'utilisateurs</a></li>
+			
+		</ul>
+	</li>
+</ul>
+</template>

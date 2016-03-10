@@ -1,0 +1,14 @@
+<template name="calendar">
+  <ul>
+  {{#each days}}
+    <li>{{this}}</li>
+  {{/each}}
+  </ul>
+</template>
+
+
+<template name="list">  
+  {{#each items}}
+    {{name}} - {{pet}}<br>
+  {{/each}}
+</template>  
