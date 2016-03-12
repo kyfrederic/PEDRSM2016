@@ -1,14 +1,17 @@
- <template name="liste">
+<template name="openfile">
 
-<form id="formNormal" >
-<!-- <h2 > Liste de Fichiers <%= type %></h2> -->
-<h2 > Liste de Fichiers</h2>
-<p>{{ posts }}</p>
-  <!--  <% for(var i=0; i<liste.length; i++) {%> -->
-   
-  <!--  <li> <a href="ouvrirFichier/<%= liste[i] %>"><%= liste[i] %></a></li>
-  <br />
-<% } %> -->
+<form >
+  <h2> Fichier  </h2>
+
+  <input type ='text' name="nom" value="{{setfile}}" />
+<br />
+<br />
+   <textarea rows="20" cols="100" name="contenu" readonly>
+     {{ res }}
+   </textarea> 
+<br />
+<br />
+  <input type ='submit' value='Enregistrer'/>
 </form>
 
  </template>

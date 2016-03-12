@@ -1,7 +1,3 @@
-//myfiles;
-
-
-
 Template.concatene.events({
     'submit form': function(e){
 		e.preventDefault();
@@ -175,42 +171,6 @@ $.ajax({
 });
 
 
-// var MaFonction = function(){
-	
-// $.ajax({
-//        url : 'http://localhost:3000/listes',
-//        type : 'GET',
-//        //dataType : 'html', // On désire recevoir du HTML
-//        	dataType : "json",
-//        success : function(res){ //alert(res);// code_html contient le HTML renvoyé
-//         	myfiles = res ;
-//        // 	affiche(jsonfile);
-   
-
-//        },
-//     });
-//  return jsonfile;
-// //alert(res);
-
-// };
-var retour;
-MaFonction = function traduireVariable(){
-    // var retour;
-    $.ajax({
-        type: "GET",
-        dataType: "json",
-        //data: "variable="+nomVariable,
-        async: false,
-        url: 'http://localhost:3000/listes',
-        success: function(data) {alert (data+" c'est moi !!");
-        return data;
-        }
-    });
-    //return retour;
-}
-
-
-
 thin = function testAjax(handleData) {
 	var retour;
   $.ajax({
@@ -218,8 +178,7 @@ thin = function testAjax(handleData) {
   	type: "GET",
     url:"http://localhost:3000/listes", 
     async: false,
-    success:function(data) {
-      //handleData(data); 
+    success:function(data) { 
       retour = data ;
     }
   });
@@ -227,34 +186,27 @@ thin = function testAjax(handleData) {
 }
 
 
-// test = testAjax(function(output){
-//   // here you use the output
 
-//   alert(output+" kikikikikiki");
-//   //return output;
-// });
+Template.ouvrirFichier.events({
+    'click #linkA': function(event,template) {
+        event.preventDefault();
+        var h=event.target.getAttribute("data-id");
+        alert(h);
+  	$.ajax({
+  	dataType: "json",
+  	type: "GET",
+    url:"http://localhost:3000/myfiles/"+h, 
+    async: false,
+    success:function(data) { alert(data);
+      retourouvrir = data ;
+      window.location = 'openfile';
+    }
+  });
+  //return retourouvrir;
+
+}
+});
 
 
-// affiche = function (){
-// 	var myfiles = "tata";
-// return myfiles;
-
-// }
 
 
-
-// Template.liste.events({
-//   //   'submit form': function(e){
-// 		// e.preventDefault();
-// 		// var vala = $("input[name='nom']").val();
-// 		// var valb = $('textarea#message').val();
-//  $.ajax({
-//        url : 'http://localhost:3000/liste', // La ressource ciblée
-//        type : 'GET' ,// Le type de la requête HTTP.
-//        data : 'utilisateur=' + nom_user,
-//     success: function(response) {alert(response);
-//     //window.location = 'message';
-//      }
-// }); 
-// }
-// });

@@ -1,18 +1,14 @@
  <template name="ouvrirFichier">
 <form id="monForm" >
   <h2> Fichier  </h2>
-<!--   <input type ='text' name="nom" />
-<br />
-<br />
-   <textarea rows="20" cols="100" name="contenu" > -->
-     <!-- <%= data %>
-     {{{ setAuthor }}}
-   </textarea> --> 
-   <!-- {{{setAuthor}}} -->
 
    <ul>
   {{#each setAuthor}}
-    <li>{{this}}</li>
+    <!-- <li>{{this}}</li> -->
+    <!-- href="{{pathFor route='openfile'}}" -->
+    <!-- <li> <a href="myfiles/:{{this}}" id="linkA" data-id="{{this}}">{{this}}</a></li> -->
+   <!--  <li> <a href="openfile/{{this}}">{{this}}</a></li> -->
+    <li> <a href="multi/{{this}}">{{this}}</a></li>
   {{/each}}
   </ul>
 

@@ -1,19 +1,44 @@
 Template.ouvrirFichier.helpers({
     setAuthor: function(){
-//    	var array = new Array("element0", "element1", "element2");
-
  var array = thin();
-//var res = array.split(",");
-//var h = res.split("\"");
- alert (typeof (array));
-   	//alert (array + "ok");
 		return array;
 	}
 });
 
 
-// face = function(){
-// array.splite()
-// 	return tata;
-// }
+// Template.openfile.helpers({
+//  setfile: function(){
 
+//  var array = retourouvrir;
+//  alert(array)
+// 		return array;
+		
+// 	}
+	
+// });
+
+
+
+// Template.openfiles.helpers({
+//     setfile: function(){
+
+//     	$.ajax({
+//   	dataType: "json",
+//   	type: "GET",
+//     url:"http://localhost:3000/myfiles/dodo.ejs", 
+//     async: false,
+//     success:function(data) { 
+//       retour = data ;
+//     }
+//   });
+//   return retour;
+
+
+
+//  var array = monfilenom;
+//  alert(array)
+// 		return array;
+		
+// 	}
+	
+// });

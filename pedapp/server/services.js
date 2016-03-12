@@ -85,7 +85,7 @@ listeFichiersCSS= function()
 return fs.readdirSync('./public/css/');
 }
 
-ouvrirFichier= function(nom)
+var ouvrirFichier= function(nom)
 {
 if(nom.substring(nom.length-3,nom.length)==".js")
 {
