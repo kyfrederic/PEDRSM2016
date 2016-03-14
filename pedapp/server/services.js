@@ -77,27 +77,27 @@ return files;
 
 listeFichiersJS= function()
 {
-return fs.readdirSync('.');
+return fs.readdirSync('/home/kouakou/Bureau/createfilesmeteor/js/');
 }
 
 listeFichiersCSS= function()
 {
-return fs.readdirSync('./public/css/');
+return fs.readdirSync('/home/kouakou/Bureau/createfilesmeteor/css/');
 }
 
-var ouvrirFichier= function(nom)
+ouvrirFichier= function(nom)
 {
 if(nom.substring(nom.length-3,nom.length)==".js")
 {
-  return fs.readFileSync('./'+nom, 'utf8');
+  return fs.readFileSync('/home/kouakou/Bureau/createfilesmeteor/js/'+nom, 'utf8');
 }
 else if(nom.substring(nom.length-4,nom.length)==".ejs")
      {
-            return fs.readFileSync('./views/'+nom, 'utf8');
+            return fs.readFileSync('/home/kouakou/Bureau/createfilesmeteor/ejs/'+nom, 'utf8');
       }
        else if(nom.substring(nom.length-4,nom.length)==".css")
             {
-             return fs.readFileSync('./public/css/'+nom, 'utf8');
+             return fs.readFileSync('/home/kouakou/Bureau/createfilesmeteor//css/'+nom, 'utf8');
              }
 }
 

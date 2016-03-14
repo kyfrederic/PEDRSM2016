@@ -129,7 +129,7 @@ $.ajax({
     url: 'http://localhost:3000/createfilesJS',
     type: 'POST',
      data: 'nom='+vala+'&contenu='+valb,
-    success: function(response) {//alert(response);
+    success: function(response) {
     window.location = 'message';
      }
 }); 
@@ -146,7 +146,7 @@ $.ajax({
     url: 'http://localhost:3000/createfilesCSS',
     type: 'POST',
      data: 'nom='+vala+'&contenu='+valb,
-    success: function(response) {//alert(response);
+    success: function(response) {
     window.location = 'message';
      }
 }); 
@@ -163,7 +163,7 @@ $.ajax({
     url: 'http://localhost:3000/createfilesCSS',
     type: 'POST',
      data: 'nom='+vala+'&contenu='+valb,
-    success: function(response) {//alert(response);
+    success: function(response) {
     window.location = 'message';
      }
 }); 
@@ -178,7 +178,7 @@ thin = function testAjax(handleData) {
   	type: "GET",
     url:"http://localhost:3000/listes", 
     async: false,
-    success:function(data) { 
+    success:function(data) {
       retour = data ;
     }
   });
@@ -186,26 +186,56 @@ thin = function testAjax(handleData) {
 }
 
 
-
-Template.ouvrirFichier.events({
-    'click #linkA': function(event,template) {
-        event.preventDefault();
-        var h=event.target.getAttribute("data-id");
-        alert(h);
-  	$.ajax({
+filesjs = function filesjsfunc(handleData) {
+	var retourjs;
+  $.ajax({
   	dataType: "json",
   	type: "GET",
-    url:"http://localhost:3000/myfiles/"+h, 
+    url:"http://localhost:3000/listesjs", 
     async: false,
-    success:function(data) { alert(data);
-      retourouvrir = data ;
-      window.location = 'openfile';
+    success:function(data) { 
+      retourjs = data ;
     }
   });
-  //return retourouvrir;
-
+  return retourjs;
 }
-});
+
+
+filescss = function filesjsfunc(handleData) {
+	var retourjs;
+  $.ajax({
+  	dataType: "json",
+  	type: "GET",
+    url:"http://localhost:3000/listescss", 
+    async: false,
+    success:function(data) { 
+      retourjs = data ;
+    }
+  });
+  return retourjs;
+}
+
+
+
+// Template.ouvrirFichier.events({
+//     'click #linkA': function(event,template) {
+//         event.preventDefault();
+//         var h=event.target.getAttribute("data-id");
+//         alert(h);
+//   	$.ajax({
+//   	dataType: "json",
+//   	type: "GET",
+//     url:"http://localhost:3000/myfiles/"+h, 
+//     async: false,
+//     success:function(data) { alert(data);
+//       retourouvrir = data ;
+//       window.location = 'openfile';
+//     }
+//   });
+//   //return retourouvrir;
+
+// }
+// });
 
 
 

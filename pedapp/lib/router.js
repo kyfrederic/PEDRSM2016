@@ -39,29 +39,26 @@ Router.route('/factorielle', {
 });
 
 
-Router.route('/ouvrirFichier', {
-    name: "ouvrirFichier",
-    template: "ouvrirFichier"
+Router.route('/ouvrirFichierEJS', {
+    name: "ouvrirFichierEJS",
+    template: "ouvrirFichierEJS"
 });
 
-Router.route('/openfile/:id', {
-    name: "openfile",
-    template: "openfile",
-    data: function(){
-    var nom = this.params.id;
-        
-        return {
-        setfile: mon
-            
-        }
-    }
-
+Router.route('/ouvrirFichierJS', {
+    name: "ouvrirFichierJS",
+    template: "ouvrirFichierJS"
 });
 
 
 
-Router.route('/multi/:id', {
-    name: "multi",
+Router.route('/ouvrirFichierCSS', {
+    name: "ouvrirFichierCSS",
+    template: "ouvrirFichierCSS"
+});
+
+
+Router.route('/openfileEJS/:id', {
+    name: "openfileEJS",
     template: "openfile",
     data: function(){
         var num1 = this.params.id;
@@ -72,7 +69,7 @@ Router.route('/multi/:id', {
     type: "GET",
     url:"http://localhost:3000/myfiles/"+num1, 
     async: false,
-    success:function(data) { alert(data);
+    success:function(data) { 
       retourouvrir = data ;
     }
   });
@@ -84,10 +81,62 @@ Router.route('/multi/:id', {
     }
 });
 
+
+Router.route('/openfileJS/:id', {
+    name: "openfileJS",
+    template: "openfile",
+    data: function(){
+        var num1 = this.params.id;
+        var retourouvrir;
+
+        $.ajax({
+    dataType: "json",
+    type: "GET",
+    url:"http://localhost:3000/myfilesjs/"+num1, 
+    async: false,
+    success:function(data) {
+      retourouvrir = data ;
+    }
+  });
+          
+        return {
+            res: retourouvrir, 
+            setfile : num1
+        };
+    }
+});
+
+
+Router.route('/openfileCSS/:id', {
+    name: "openfileCSS",
+    template: "openfile",
+    data: function(){
+        var num1 = this.params.id;
+        var retourouvrir;
+
+        $.ajax({
+    dataType: "json",
+    type: "GET",
+    url:"http://localhost:3000/myfilescss/"+num1, 
+    async: false,
+    success:function(data) {
+      retourouvrir = data ;
+    }
+  });
+          
+        return {
+            res: retourouvrir, 
+            setfile : num1
+        };
+    }
+});
+
+
 Router.route('/fichierEJS', {
     name: "fichierEJS",
     template: "fichierEJS"
 });
+
 Router.route('/fichierJS', {
     name: "fichierJS",
     template: "fichierJS"
@@ -126,67 +175,14 @@ Router.route('/message', {
 
 
 
-Router.route('/createfilesEJS', {where: 'server'})
-  .post(function () {
-    console.log(this.request.body);
-    var fname = this.request.body.nom
-    var contenu = this.request.body.contenu
-    creerFichierEJS(fname, contenu );
-    this.response.end();
-    
-    
-
-  });
 
 
 
-  Router.route('/createfilesJS', {where: 'server'})
-  .post(function () {
-    console.log(this.request.body);
-    var fname = this.request.body.nom
-    var contenu = this.request.body.contenu
-    this.response.end();
-    creerFichierJS(fname, contenu )
-    this.response.end();
 
-  });
 
-  Router.route('/createfilesCSS', {where: 'server'})
-  .post(function () {
-    console.log(this.request.body);
-    var fname = this.request.body.nom
-    var contenu = this.request.body.contenu
-    creerFichierCSS(fname, contenu )
-    this.response.end();
-    
+  // Router.route('/openfilesCSS', {where: 'server'})
+  // .get(function () {
     
 
-  });
-
-  Router.route('/listes', {where: 'server'})
-
-  .get( function() {
-    var files = listeFichiersEJS();
-     var myJsonString = JSON.stringify(files);
-       this.response.end(myJsonString);
-
-    
-  });
-
-
-  Router.route('/myfiles/:id', {where: 'server'})
-  .get(function () {
-    var nom = this.params.id;
-    var contenu = ouvrirFichier(nom);
-     console.log(nom+" "+contenu); 
-    var  myJsonString=  JSON.stringify(contenu);
-  this.response.end(myJsonString);
-  });
-
-
-  Router.route('/openfilesCSS', {where: 'server'})
-  .get(function () {
-    
-
-  });
+  // });
 

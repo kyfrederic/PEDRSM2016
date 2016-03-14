@@ -1,0 +1,18 @@
+ <template name="ouvrirFichierJS">
+<form id="monForm" >
+  <h2> Fichier  </h2>
+
+   <ul>
+  {{#each setAuthorjs}}
+    <li> <a href="openfileJS/{{this}}">{{this}}</a></li>
+  {{/each}}
+  </ul>
+
+
+ <!-- {{ setAuthorjs }} -->
+
+<br />
+<br />
+  <input type ='submit' value='Enregistrer'/>
+</form>
+ </template>

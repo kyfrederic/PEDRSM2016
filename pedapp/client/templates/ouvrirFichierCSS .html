@@ -1,0 +1,18 @@
+ <template name="ouvrirFichierCSS">
+<form id="monForm" >
+  <h2> Fichier  </h2>
+
+   <ul>
+  {{#each setAuthorjs}}
+    <li> <a href="openfileCSS/{{this}}">{{this}}</a></li>
+  {{/each}}
+  </ul>
+
+
+ <!-- {{ setAuthorjs }} -->
+
+<br />
+<br />
+  <input type ='submit' value='Enregistrer'/>
+</form>
+ </template>

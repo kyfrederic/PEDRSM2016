@@ -1,0 +1,16 @@
+ <template name="ouvrirFichierEJS">
+<form id="monForm" >
+  <h2> Fichier  </h2>
+
+   <ul>
+  {{#each setAuthor}}
+    <li> <a href="openfileEJS/{{this}}">{{this}}</a></li>
+  {{/each}}
+  </ul>
+
+
+<br />
+<br />
+  <input type ='submit' value='Enregistrer'/>
+</form>
+ </template>
