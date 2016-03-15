@@ -174,15 +174,36 @@ Router.route('/message', {
 });
 
 
+Router.route('/ajoutPersonne', {
+
+    name: 'ajoutPersonne'
+
+});
 
 
 
+Router.route('/listePersonnes', {
 
+    name: "listePersonnes",
 
+    data: function(){
 
-  // Router.route('/openfilesCSS', {where: 'server'})
-  // .get(function () {
-    
+        var personnes = Personnes.find();
 
-  // });
+        
 
+        return {
+
+            personnes: personnes
+
+        };
+
+    },
+
+    waitOn: function(){
+
+        return Meteor.subscribe("allPersonneHeaders");
+
+    }
+
+});

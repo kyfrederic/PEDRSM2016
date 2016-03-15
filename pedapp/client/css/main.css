@@ -12,6 +12,10 @@ a
 {
 color:#333;
 }
+.blanc
+{
+    color:white;
+}
 form {
     /* Pour le centrer dans la page */
     margin: 0 auto;
