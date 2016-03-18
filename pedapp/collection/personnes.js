@@ -9,3 +9,9 @@ Personnes.allow({
     remove: function(){return true;}
 
 });
+
+
+
+
+
+ 

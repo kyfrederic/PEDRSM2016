@@ -42,7 +42,7 @@ Template.majuscule.events({
 
 
 
-Template.majuscule.events({
+Template.minuscule.events({
     'submit form': function(e){
 		e.preventDefault();
 		
@@ -217,26 +217,30 @@ filescss = function filesjsfunc(handleData) {
 
 
 
-// Template.ouvrirFichier.events({
-//     'click #linkA': function(event,template) {
-//         event.preventDefault();
-//         var h=event.target.getAttribute("data-id");
-//         alert(h);
-//   	$.ajax({
-//   	dataType: "json",
-//   	type: "GET",
-//     url:"http://localhost:3000/myfiles/"+h, 
-//     async: false,
-//     success:function(data) { alert(data);
-//       retourouvrir = data ;
-//       window.location = 'openfile';
-//     }
-//   });
-//   //return retourouvrir;
+Template['uploadtemplate'].helpers({
+  myFormData: function() {
+    return { directoryName: 'images', prefix: this._id, _id: this._id }
+  },
+  filesToUpload: function() {
+    return Uploader.info.get();
+  }
+});
 
-// }
-// });
+Template['uploadedInfo'].helpers({
+  src: function() {
+    if (this.type.indexOf('image') >= 0) {
+      return 'upload/' + this.path;
+    } else return 'file_icon.png';
+  }
+});
 
+Template['uploadedInfo'].events({
+  'click .deleteUpload':function() {
+    if (confirm('Are you sure?')) {
+      Meteor.call('deleteFile', this._id);
+    }
+  }
+})
 
 
 
