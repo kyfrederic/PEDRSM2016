@@ -217,30 +217,48 @@ filescss = function filesjsfunc(handleData) {
 
 
 
-Template['uploadtemplate'].helpers({
-  myFormData: function() {
-    return { directoryName: 'images', prefix: this._id, _id: this._id }
-  },
-  filesToUpload: function() {
-    return Uploader.info.get();
-  }
-});
+Template.create_personne.events({
 
-Template['uploadedInfo'].helpers({
-  src: function() {
-    if (this.type.indexOf('image') >= 0) {
-      return 'upload/' + this.path;
-    } else return 'file_icon.png';
-  }
-});
+    'submit form': function(e){
 
-Template['uploadedInfo'].events({
-  'click .deleteUpload':function() {
-    if (confirm('Are you sure?')) {
-      Meteor.call('deleteFile', this._id);
+        e.preventDefault();
+
+        
+
+        var nom = $("input[name='nom']").val();
+
+        var prenom = $("input[name='prenom']").val();
+
+        var age = $("input[name='age']").val();
+
+        
+
+        var personne = {
+
+                nom: nom,
+
+                prenom: prenom,
+
+                age: age
+
+        }
+
+
+Personnes.insert(personne, function(err, id){
+    if(err){
+        alert(err.reason)
     }
-  }
-})
+    else{
+        $("form input, form textarea").val("");
+    }
+Router.go('message');
+});
+
+    }
+
+});
+
+
 
 
 
