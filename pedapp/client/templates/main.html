@@ -1,16 +1,4 @@
-<!-- <head>
-  <title>pedapp</title>
-</head>
 
-<body>
-  <h1> Bibliothéques Meteor.js</h1>
-
-  {{> menu}}
-
-  {{> yield}}  
-</body>
-
- -->
 <template name="mainLayout">
     <head>
         <title>pedapp</title>
@@ -25,14 +13,6 @@
                 <nav class="col-md-3">{{> menu}}</nav>
                 <section class="col-md-9 well">{{> yield}}</section>
             </div>
-            <!-- <div class="row">
-                <footer class="col-md-12">
-                    <hr />
-                    <div class="footer">
-                        <p>Propulsé par Meteor.js !</p>
-                    </div>
-                </footer>
-            </div> -->
         </div>
     </body>
 </template>
