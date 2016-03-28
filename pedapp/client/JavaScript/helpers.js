@@ -1,19 +1,19 @@
 Template.ouvrirFichierEJS.helpers({
-    setAuthor: function(){
- var array = thin();
+    setfilesEjs: function(){
+ var array = filesejs();
 		return array;
 	}
 });
 
 Template.ouvrirFichierJS.helpers({
-    setAuthorjs: function(){
+    setfilesJs: function(){
  var arrayjs = filesjs();
 		return arrayjs;
 	}
 });
 
 Template.ouvrirFichierCSS.helpers({
-    setAuthorjs: function(){
+    setfilesCss: function(){
  var arrayjs = filescss();
 		return arrayjs;
 	}

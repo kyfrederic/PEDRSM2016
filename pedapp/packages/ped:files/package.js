@@ -10,23 +10,10 @@ Package.describe({
   documentation: 'README.md'
 });
 
-// Package.onUse(function(api) {
-//   api.versionsFrom('1.2.1');
-//   api.use('ecmascript');
-//   api.addFiles('files.js');
-// });
 
-// Package.onTest(function(api) {
-//   api.use('ecmascript');
-//   api.use('tinytest');
-//   api.use('ped:files');
-//   api.addFiles('files-tests.js');
-// });
 
 Package.on_use(function(api) {
-  // api.versionsFrom('1.2.1');
-  // api.use('ecmascript');
-
+  
 
   api.add_files("filesfunctions.js", "server");
   api.export("creerFichierEJS", "server");

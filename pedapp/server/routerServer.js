@@ -17,9 +17,6 @@
     var contenu = this.request.body.contenu
     creerFichierCSS(fname, contenu )
     this.response.end();
-    
-    
-
   });
 
 
@@ -30,8 +27,6 @@
     var contenu = this.request.body.contenu
     creerFichierEJS(fname, contenu );
     this.response.end();
-    
-    
 
   });
 

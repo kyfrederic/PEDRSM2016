@@ -175,38 +175,26 @@ Router.route('/message', {
 
 
 Router.route('/ajoutPersonne', {
-
     name: 'ajoutPersonne'
-
 });
 
 
 
 Router.route('/listePersonnes', {
-
     name: "listePersonnes",
-
     data: function(){
-
         var personnes = Personnes.find();
-
-        
-
-        return {
-
+             return {
             personnes: personnes
-
         };
-
     },
-
     waitOn: function(){
-
         return Meteor.subscribe("allPersonneHeaders");
-
     }
 
 });
+
+
 
 
 

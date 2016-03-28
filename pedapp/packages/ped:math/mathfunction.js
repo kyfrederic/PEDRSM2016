@@ -1,4 +1,3 @@
-// Write your package code here!
 racine = function(nombre) {
  return Math.sqrt(nombre);
 }
